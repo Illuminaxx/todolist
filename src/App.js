@@ -7,6 +7,8 @@ import TodoItems from "./TodoItems";
 
 class App extends Component {
   inputElement = React.createRef();
+
+  /* Constructor */
   constructor() {
       super();
       this.state = {
@@ -17,6 +19,7 @@ class App extends Component {
           }
       }
   }
+  /* Method to delete task in todolist*/
   deleteItem = key => {
     const filteredItems = this.state.items.filter(item => {
       return item.key !== key
@@ -34,6 +37,7 @@ class App extends Component {
     })
   };
 
+  /* Add a new task */
   addItem = e => {
     e.preventDefault();
     const newItem = this.state.currentItem;
@@ -46,6 +50,7 @@ class App extends Component {
     }
   };
 
+  /* View of TodoList */
   render() {
     return (
         <div className="App">
